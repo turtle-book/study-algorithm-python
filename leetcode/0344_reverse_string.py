@@ -4,13 +4,18 @@ from typing import List
 
 class Solution:
   def reverseString(self, s: List[str]) -> None:
-    return s[::-1]
+    s[:] = s[::-1]
 
 # Local tests
 if __name__ == "__main__":
-    solution = Solution()
+  solution = Solution()
+  
+  s1 = ["h","e","l","l","o"]
+  solution.reverseString(s1)
+  assert s1 == ["o","l","l","e","h"]
 
-    assert solution.reverseString(["h","e","l","l","o"]) == ["o","l","l","e","h"]
-    assert solution.reverseString(["H","a","n","n","a","h"]) == ["h","a","n","n","a","H"]
+  s2 = ["H","a","n","n","a","h"]
+  solution.reverseString(s2)
+  assert s2 == ["h","a","n","n","a","H"]
 
-    print("All tests passed!")
+  print("All tests passed!")
